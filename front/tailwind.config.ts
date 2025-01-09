@@ -58,20 +58,14 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		  fontFamily: {
-			sans: [
-			  "-apple-system",
-			  "BlinkMacSystemFont",
-			  '"Segoe UI"',
-			  "Roboto",
-			  "Oxygen",
-			  "Ubuntu",
-			  "Cantarell",
-			  '"Fira Sans"',
-			  '"Droid Sans"',
-			  '"Helvetica Neue"',
-			  "sans-serif",
-			],
+			sans: ['Roboto', 'Tenor Sans', 'sans-serif'],
+			tenor: ['Tenor Sans', 'serif'],
+			roboto: ['Roboto', 'sans-serif'],
 		  },
+		  backgroundImage: {
+			'hero-pattern': "url('/img/hero-pattern.svg')",
+			'footer-texture': "url('/img/footer-texture.png')",
+		  }
   	}
   },
   plugins: [animate],

@@ -6,7 +6,7 @@ import Logotipo from './Logotipo'
 const Navigation = () => {
   return (
 <nav
-      className="flex items-center justify-between h-32 px-10  lg:px-36 fixed top-0 left-0 right-0 z-50  bg-[#F1F9F9]"
+      className="flex items-center justify-between h-36 px-10  lg:px-36 fixed top-0 left-0 right-0 z-50  bg-[#26230d]"
       id="navigation"
     >
       <div className="flex items-center">
@@ -14,7 +14,7 @@ const Navigation = () => {
           <Logotipo/>
         </Link>
       </div>
-      <ul className="hidden font-normal lg:flex lg:items-center space-x-10 text-xl text-[#e5a773]">
+      <ul className="hidden font-normal font-roboto lg:flex lg:items-center space-x-10 text-xl text-[#e5a773]">
       <li>
             <a href="#">Inicio</a>
           </li>

@@ -13,7 +13,7 @@ const BurguerMenu = () => {
 
   return (
     <div className="relative">
-      <Menu size={32} color="#19120c" strokeWidth={2} className="lg:hidden" onClick={switchMenu} />
+      <Menu size={32} color="#cc9466" strokeWidth={2} className="lg:hidden" onClick={switchMenu} />
       <div
         className={`fixed top-0 right-0 min-h-screen w-1/2 bg-gradient-to-b from-[#80762c] to-[#191708] shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
