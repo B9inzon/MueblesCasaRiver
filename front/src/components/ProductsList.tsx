@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 const ProductsList = () => {
   return (
-    <div  className= "grid grid-cols-3 min-h-screen pt-36  w-full items-center bg-[#f2f1e9]"
+    <div  className= "min-h-screen grid lg:grid-cols-4 gap-4 pt-40 px-5 w-full justify-items-center bg-[#f8f8fb]  "
     id='Products'>
         {productsArray.map((product) => {
           return <ProductCard key={product.id} {...product} />;
