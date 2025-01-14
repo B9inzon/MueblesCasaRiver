@@ -10,7 +10,7 @@ const MainHome = () => {
     >
       <div className="relative flex flex-col mb-20 py-36 w-full items-center justify-center bg-[url('/assets/hero_.webp')] bg-cover bg-bottom ">
       <div className="absolute inset-0 bg-black/70 "></div>
-        <h1 className="text-[#ffba80] font-normal font-tenor text-5xl mb-6 md:text-7xl md:mb-8  lg:text-8xl lg:mb-10 relative z-10">
+        <h1 className="text-[#ffba80] font-light text-center lg:font-normal font-tenor text-5xl mb-6 md:text-7xl md:mb-8  lg:text-8xl lg:mb-10 relative z-10 ">
           Muebles Casa River
         </h1>
         <p
@@ -23,7 +23,7 @@ const MainHome = () => {
       </div>
       <Link href='#Products' >
       <button className="flex flex-row px-6 h-14 w-auto gap-2 text-base lg:text-2xl font-semibold items-center justify-center text-[#ffba80] shadow-lg  shadow-[#59521e] bg-[#8c8341] hover:bg-[#736a27] rounded-xl transition ease-in-out duration-300">
-        Ver productos{" "}
+        Nuestros productos{" "}
         {
           <AiOutlineArrowDown
           size={32}

@@ -10,7 +10,7 @@ const Navigation = () => {
       id="navigation"
     >
       <div className="flex items-center">
-        <Link href="#Main">
+        <Link href="#">
           <Logotipo/>
         </Link>
       </div>
