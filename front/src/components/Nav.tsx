@@ -10,13 +10,13 @@ const Navigation = () => {
       id="navigation"
     >
       <div className="flex items-center">
-        <Link href="#">
+        <Link href="#Main">
           <Logotipo/>
         </Link>
       </div>
       <ul className="hidden font-normal font-roboto lg:flex lg:items-center space-x-10 text-xl text-[#e5a773]">
       <li>
-            <a href="#">Inicio</a>
+            <a href="#Main">Inicio</a>
           </li>
           <li>
             <a href="#Salas">Salas</a>
