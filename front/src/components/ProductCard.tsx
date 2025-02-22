@@ -1,5 +1,5 @@
 import { IProduct } from "@/Interfaces/IProduct";
-import Contact from "./WhatsApp";
+import Contact from "./Contact";
 
 const ProductCard: React.FC<IProduct> = ({ name, image, description }) => {
   return (
