@@ -1,0 +1,12 @@
+### Recuperar todos los registros (películas)
+GET http://localhost:3001/movies
+
+### Recuperar un registro por id (películas)
+GET http://localhost:3001/movies/1
+
+### Recuperar todos los registros por un género (películas)
+GET http://localhost:3001/movies?genre=terror
+
+### Crear una película con POST
+POST http://localhost:3001/movies
+Content-Type: application/json
