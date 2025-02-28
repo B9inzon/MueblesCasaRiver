@@ -1,10 +1,13 @@
 const express = require('express');
+const crypto = require('node:crypto');
+const cors = require('cors')
+
 const movies = require('./movies.json')
-const crypto = require('node:crypto')
-const z = require('zod')
+const { validateMovie, validatePartialMovie } = require('./schemas/movies');
 
 const server = express()
 server.use(express.json())
+server.use(cors())
 server.disable('x-powered-by')
 
 //Todo Obtener películas y película por género
@@ -30,30 +33,54 @@ server.get('/movies/:id', (req, res)=>{
 
 //todo Crear una película
 server.post('/movies', (req, res) =>{
-    const {
-    title,
-    year,
-    director,
-    duration,
-    poster,
-    genre,
-    rate,
-    } = req.body
+    const result = validateMovie(req.body)
+
+    if(result.error){
+        return res.status(400).json({ error: JSON.parse(result.error.message) })
+    }
 
     const newMovie = {
         id: crypto.randomUUID(), //! Crea un UUID v4
-        title,
-        year,
-        director,
-        duration,
-        poster,
-        genre,
-        rate: rate ?? 0,
+        ... result.data
     }
 
     movies.push(newMovie)
 
     res.status(201).json(newMovie)
+})
+
+//todo Actualizar una película
+server.patch('/movies/:id', (req, res) =>{
+    const result = validatePartialMovie(req.body)
+    
+    if(!result.success){
+        return res.status(400).json({error: JSON.parse(result.error.message)})
+    }
+    
+    const {id} = req.params
+    const movieIndex = movies.findIndex(movie => movie.id === id)
+
+    if( movieIndex === -1 ) return res.status(404).json({message: 'No se encontró la película'})
+
+    const updateMovie = {
+        ...movies[movieIndex],
+        ...result.data
+    }
+
+    movies[movieIndex] = updateMovie
+
+    return res.json(updateMovie)
+})
+
+//todo Borrar película
+server.delete('/movies/:id', (req, res) =>{
+    const {id} = req.params
+    const movieIndex = movies.findIndex(movie => movie.id === id)
+
+    if( movieIndex === -1 ){ return res.status(404).json({message: 'No se encontró la película'})}
+    movies.splice(movieIndex, 1)
+
+    return res.json({message: 'Pelicula borrada'})
 })
 
 const PORT = process.env.PORT ?? 3001;
