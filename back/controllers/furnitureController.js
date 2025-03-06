@@ -10,7 +10,7 @@ export class FurnitureController {
     const { id } = req.params;
     const furniture = await FurnitureService.getById(id);
     if (furniture) return res.json(furniture);
-    res.status(404).json({ message: "No se encontró el mueble" });
+    res.status(404).json({ message: "No se encontró el producto" });
   }
 
   static async create(req, res) {
@@ -26,13 +26,13 @@ export class FurnitureController {
     const { id } = req.params;
     const updatedFurniture = await FurnitureService.update(id, req.body);
     if (updatedFurniture) return res.json(updatedFurniture);
-    res.status(404).json({ message: "No se encontró el mueble" });
+    res.status(404).json({ message: "No se encontró el producto" });
   }
 
   static async delete(req, res) {
     const { id } = req.params;
     const result = await FurnitureService.delete(id);
     if (result) return res.json({ message: "Mueble eliminado" });
-    res.status(404).json({ message: "No se encontró el mueble" });
+    res.status(404).json({ message: "No se encontró el producto" });
   }
 }
