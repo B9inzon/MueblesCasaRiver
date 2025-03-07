@@ -9,4 +9,4 @@ furnitureRouter.get("/:id", FurnitureController.getById);
 furnitureRouter.post("/", FurnitureController.create);
 furnitureRouter.patch("/:id", FurnitureController.update);
 furnitureRouter.delete("/:id", FurnitureController.delete);
-
+ 

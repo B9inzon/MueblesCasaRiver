@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import { furnitureRouter } from "./routes/furnitureRouter.js";
-import { connectDB } from "./config/database.js";
+import { connectDB } from "./database.js";
 
 const server = express();
 server.use(json());
@@ -10,8 +10,6 @@ server.disable("x-powered-by");
 server.use("/furniture", furnitureRouter);
 
 connectDB();
-
-
 
 const PORT = process.env.PORT ?? 3001;
 

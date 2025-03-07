@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/database.js";
+import { sequelize } from "../database.js";
 
 export const Furniture = sequelize.define("Furniture", {
   id: {
@@ -28,4 +28,3 @@ export const Furniture = sequelize.define("Furniture", {
 });
 
 await sequelize.sync({ force: false });
-
